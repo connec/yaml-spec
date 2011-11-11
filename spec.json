@@ -1,0 +1,140 @@
+{
+  "empty streams should evaluate to null": [
+    {
+      "yaml": "",
+      "json": null
+    }
+  ],
+  
+  "a stream containing an arbitrary string should evaluate to that string": [
+    {
+      "yaml": "hello yaml",
+      "json": "hello yaml"
+    }
+  ],
+  
+  "valid nulls should evaluate to null": [
+    {
+      "yaml": "~",
+      "json": null
+    },
+    {
+      "yaml": "null",
+      "json": null
+    },
+    {
+      "yaml": "Null",
+      "json": null
+    },
+    {
+      "yaml": "NULL",
+      "json": null
+    },
+    {
+      "yaml": "nUlL",
+      "json": "nUlL"
+    }
+  ],
+  
+  "valid trues should evaluate to true": [
+    {
+      "yaml": "true",
+      "json": true
+    },
+    {
+      "yaml": "True",
+      "json": true
+    },
+    {
+      "yaml": "TRUE",
+      "json": true
+    },
+    {
+      "yaml": "tRuE",
+      "json": "tRuE"
+    },
+    {
+      "yaml": "on",
+      "json": true
+    },
+    {
+      "yaml": "On",
+      "json": true
+    },
+    {
+      "yaml": "ON",
+      "json": true
+    },
+    {
+      "yaml": "oN",
+      "json": "oN"
+    },
+    {
+      "yaml": "yes",
+      "json": true
+    },
+    {
+      "yaml": "Yes",
+      "json": true
+    },
+    {
+      "yaml": "YES",
+      "json": true
+    },
+    {
+      "yaml": "yEs",
+      "json": "yEs"
+    }
+  ],
+  
+  "valid falses should evaluate to false": [
+    {
+      "yaml": "false",
+      "json": false
+    },
+    {
+      "yaml": "False",
+      "json": false
+    },
+    {
+      "yaml": "FALSE",
+      "json": false
+    },
+    {
+      "yaml": "fAlSe",
+      "json": "fAlSe"
+    },
+    {
+      "yaml": "off",
+      "json": false
+    },
+    {
+      "yaml": "Off",
+      "json": false
+    },
+    {
+      "yaml": "OFF",
+      "json": false
+    },
+    {
+      "yaml": "oFf",
+      "json": "oFf"
+    },
+    {
+      "yaml": "no",
+      "json": false
+    },
+    {
+      "yaml": "No",
+      "json": false
+    },
+    {
+      "yaml": "NO",
+      "json": false
+    },
+    {
+      "yaml": "nO",
+      "json": "nO"
+    }
+  ]
+}
