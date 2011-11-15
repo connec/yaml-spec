@@ -21,33 +21,6 @@ The tests (`spec.json`) are in JSON format to ensure cross-language compatabilit
 This is at the expense of expressability, hence only the above aspects of YAML
 are exercised.
 
-The format os `spec.json` is as follows:
-
-  {
-    "test name": [
-      {
-        "yaml": "- some\n- yaml",
-        "json": ["some", "yaml"]
-      }
-    ],
-    
-    "another test": [
-      {
-        "yaml": "more: yaml",
-        "json": {"more": "yaml"}
-      },
-      {
-        "yaml": "and yet, more: ~",
-        "json": {"and yet, more": null}
-      }
-    ]
-  }
-
-[Test Scripts]
-
-The `scripts` directory contains a sample script for testing Python's PyYAML
-library with `spec.json`.
-
 [License]
 
 WTFPL (http://sam.zoy.org/wtfpl/)
