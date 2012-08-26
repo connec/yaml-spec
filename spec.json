@@ -45,7 +45,7 @@
       "json": null
     }
   ],
-  
+
   "trues": [
     {
       "yaml": "true",
@@ -104,7 +104,7 @@
       "json": true
     }
   ],
-  
+
   "falses": [
     {
       "yaml": "false",
@@ -163,7 +163,7 @@
       "json": false
     }
   ],
-  
+
   "integers": [
     {
       "yaml": "!!int 0",
@@ -194,7 +194,7 @@
       "json": 12
     }
   ],
-  
+
   "floats": [
     {
       "yaml": "1.23015e+3",
@@ -221,7 +221,7 @@
       "json": 1.0
     }
   ],
-  
+
   "strings": [
     {
       "yaml": "Hello World",
@@ -256,7 +256,7 @@
       "json": "# comment"
     }
   ],
-  
+
   "string formatting": [
     {
       "yaml": "# ASCII Art\n--- |\n  \\//||\\/||\n  // ||  ||__",
@@ -271,7 +271,7 @@
       "json": "Sammy Sosa completed another fine season with great stats.\n\n  63 Home Runs\n  0.288 Batting Average\n\nWhat a year!"
     }
   ],
-  
+
   "simple sequences": [
     {
       "yaml": "- Mark McGwire\n- Sammy Sosa\n- Ken Griffey\n",
@@ -298,7 +298,7 @@
       "json": ["Hello, World"]
     }
   ],
-  
+
   "simple mappings": [
     {
       "yaml": "hr:  65    # Home Runs\navg: 0.2878 # Batting average\nrbi: 147   # Runs Batted In",
@@ -325,14 +325,14 @@
       "json": {"hel[l{o, w}o]rld": "goodb{y[e, w]o}rld"}
     }
   ],
-  
+
   "anchors": [
     {
       "yaml": "---\nhr:\n  - Mark McGwire\n  # Following node labeled SS\n  - &SS Sammy Sosa\nrbi:\n  - *SS # Subsequent occurrence\n  - Ken Griffey",
       "json": {"hr": ["Mark McGwire", "Sammy Sosa"], "rbi": ["Sammy Sosa", "Ken Griffey"]}
     }
   ],
-  
+
   "complex documents": [
     {
       "yaml": "american:\n - Boston Red Sox\n - Detroit Tigers\n - New York Yankees\nnational:\n - New York Mets\n - Chicago Cubs\n - Atlanta Braves",
@@ -359,7 +359,7 @@
       "json": {"name": "Mark McGwire", "accomplishment": "Mark set a major league home run record in 1998.\n", "stats": "65 Home Runs\n0.278 Batting Average"}
     }
   ],
-  
+
   "large documents": [
     {
       "yaml": "---\ninvoice: 34843\ndate   : !!str 2001-01-23\nbill-to: &id001\n    given  : Chris\n    family : Dumars\n    address:\n        lines: |\n            458 Walkman Dr.\n            Suite #292\n        city    : Royal Oak\n        state   : MI\n        postal  : 48046\nship-to: *id001\nproduct:\n    - sku         : BL394D\n      quantity    : 4\n      description : Basketball\n      price       : 450.00\n    - sku         : BL4438H\n      quantity    : 1\n      description : Super Hoop\n      price       : 2392.00\ntax  : 251.42\ntotal: 4443.52\ncomments:\n    Late afternoon is best.\n    Backup contact is Nancy\n    Billsmer @ 338-4338.",
@@ -394,6 +394,29 @@
           {"file": "TopClass.py", "line": 23, "code": "x = MoreObject(\"345\\n\")\n"},
           {"file": "MoreClass.py", "line": 58, "code": "foo = bar"}
         ]}
+      ]
+    },
+    {
+      "yaml": "# grammar.preg-coffee\n---\n# Matches a character class\n- Class: [ all, [\n  [ literal, '[' ],\n  [ label, content, maybe_some, all, [\n    [ any, [\n      [ literal, \\ ],\n      [ reject, literal, ']' ]\n    ] ],\n    advance\n  ] ],\n  [ literal, ']' ]\n] ]\n\n# Matches a double indent (an indent followed by two space)\n- DOUBLE_INDENT: [ all, [\n  INDENT,\n  SPACE,\n  SPACE\n] ]\n\n# Matches a single indent (a newline followed by two space)\n- INDENT: [ all, [\n  NEWLINE,\n  SPACE,\n  SPACE\n] ]\n\n# Matches a single whitespace character (newline or space)\n- WHITESPACE: [ any, [\n  NEWLINE,\n  SPACE\n] ]\n\n# Matches a single CR/FL newline\n- NEWLINE: [ any,\n  [ all, [\n    [ literal, \"\\r\" ],\n    [ maybe, literal, \"\\n\" ]\n  ] ],\n  [ literal, \"\\n\" ]\n]\n\n# Matches a single space\n- SPACE: [ literal, ' ' ]\n...",
+      "json": [
+        {
+          "Class": ["all", [ ["literal",  "["], ["label", "content", "maybe_some", "all", [ ["any", [ ["literal",  "\\"], ["reject",  "literal",  "]"] ] ],  "advance"] ], ["literal", "]"] ] ]
+        },
+        {
+          "DOUBLE_INDENT": ["all", ["INDENT", "SPACE", "SPACE"]]
+        },
+        {
+          "INDENT": ["all", ["NEWLINE", "SPACE", "SPACE"]]
+        },
+        {
+          "WHITESPACE": ["any", ["NEWLINE", "SPACE"]]
+        },
+        {
+          "NEWLINE": ["any", ["all", [["literal", "\r"], ["maybe", "literal", "\n"]]], ["literal", "\n"]]
+        },
+        {
+          "SPACE": ["literal", " "]
+        }
       ]
     }
   ]
