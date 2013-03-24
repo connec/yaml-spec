@@ -1,7 +1,11 @@
 [YAML Spec]
 
-YAML spec seeks to provide a basic suite of tests for host-language independent
-aspects of YAML.  In particular the aspects tested are:
+YAML spec seeks to provide a standardised suite of tests for basic YAML.
+
+[spec.json]
+
+Contains a JSON file providing YAML inputs and expected JSON equivalents for host-language
+independent aspects of YAML.  In particular the aspects tested are:
 
   - comments
   - document start + end
@@ -15,11 +19,13 @@ An implementation passing these tests would likely be suitable for parsing many
 YAML files that don't use more advanced features such as user-defined tags,
 recursive structures, etc.
 
-[Test Format]
-
 The tests (`spec.json`) are in JSON format to ensure cross-language compatability.
 This is at the expense of expressability, hence only the above aspects of YAML
 are exercised.
+
+[platform]
+
+The platform folder contains language-specific `spec.ext` files for different platforms.
 
 [License]
 
