@@ -1,4 +1,18 @@
 module.exports = {
+  floats: [
+    {
+      yaml:   ".inf",
+      result: Infinity
+    },
+    {
+      yaml:   "-.inf",
+      result: -Infinity
+    },
+    {
+      yaml:   ".NaN",
+      result: NaN
+    }
+  ],
   timestamps: [
     {
       yaml:   "2001-12-15T02:59:43.1Z",
