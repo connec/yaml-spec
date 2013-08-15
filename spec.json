@@ -294,6 +294,30 @@
     {
       "yaml":   "\"# comment\"",
       "result": "# comment"
+    },
+    {
+      "yaml":   "\"\\xd7\"",
+      "result": "×"
+    },
+    {
+      "yaml":   "\"\\xD7\"",
+      "result": "×"
+    },
+    {
+      "yaml":   "\"\\u00d7\"",
+      "result": "×"
+    },
+    {
+      "yaml":   "\"\\u00D7\"",
+      "result": "×"
+    },
+    {
+      "yaml":   "\"\\U000000d7\"",
+      "result": "×"
+    },
+    {
+      "yaml":   "\"\\U000000D7\"",
+      "result": "×"
     }
   ],
 
