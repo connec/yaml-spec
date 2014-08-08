@@ -280,6 +280,10 @@
       "result": "Hello World"
     },
     {
+      "yaml":   "\"Hello\nWorld\"",
+      "result": "Hello World"
+    },
+    {
       "yaml":   "Hello \"World\"",
       "result": "Hello \"World\""
     },
