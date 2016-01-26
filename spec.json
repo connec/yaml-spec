@@ -352,6 +352,10 @@
     {
       "yaml":   "%YAML 1.9\n--- # This version doesn't exist.  But that doesn't matter.",
       "result": null
+    },
+    {
+      "yaml":   "%TAG !foo! tag:yaml.org,2002:\n--- !foo!str content",
+      "result": "content"
     }
   ],
 
